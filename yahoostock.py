@@ -41,19 +41,19 @@ def get_all(symbol):
     return dict(
         dividend_yield=values[0],
         dividend_per_share=values[1],
-        ask_realtime=values[2], # P1
+        ask_realtime=values[2],
         dividend_pay_date=values[3],
-        bid_realtime=values[4], # P1
+        bid_realtime=values[4],
         ex_dividend_date=values[5],
-        previous_close=values[6],# P1
-        today_open=values[7], # P1
+        previous_close=values[6],
+        today_open=values[7],
         change=values[8],
         last_trade_date=values[9],
         change_percent_change=values[10],
         trade_date=values[11],
-        change_realtime=values[12], # P1
-        last_trade_time=values[13], 
-        change_percent_realtime=values[14], # P1
+        change_realtime=values[12],
+        last_trade_time=values[13],
+        change_percent_realtime=values[14],
         change_percent=values[15],
         after_hours_change_realtime=values[16],
         change_200_sma=values[17],
@@ -65,11 +65,11 @@ def get_all(symbol):
         fifty_sma=values[23],
         last_trade_time_plus=values[24],
         twohundred_sma=values[25],
-        last_trade_price=values[26], # P1
+        last_trade_price=values[26],
         one_year_target=values[27],
-        todays_value_change=values[28], # P1
+        todays_value_change=values[28],
         holdings_gain_percent=values[29],
-        todays_value_change_realtime=values[30], # P1
+        todays_value_change_realtime=values[30],
         annualized_gain=values[31],
         price_paid=values[32],
         holdings_gain=values[33],
@@ -80,11 +80,11 @@ def get_all(symbol):
         fiftytwo_week_high=values[38],
         more_info=values[39],
         fiftytwo_week_low=values[40],
-        market_cap=values[41], 
+        market_cap=values[41],
         change_from_52_week_low=values[42],
-        market_cap_realtime=values[43], # P1
+        market_cap_realtime=values[43],
         change_from_52_week_high=values[44],
-        float_shares=values[45], # P1
+        float_shares=values[45],
         percent_change_from_52_week_low=values[46],
         company_name=values[47],
         percent_change_from_52_week_high=values[48],
@@ -93,9 +93,9 @@ def get_all(symbol):
         shares_owned=values[51],
         stock_exchange=values[52],
         shares_outstanding=values[53],
-        volume=values[54], # P1
-        ask_size=values[55], # P1
-        bid_size=values[56], # P1
+        volume=values[54],
+        ask_size=values[55],
+        bid_size=values[56],
         last_trade_size=values[57],
         ticker_trend=values[58],
         average_daily_volume=values[59],
@@ -115,34 +115,13 @@ def get_all(symbol):
         price_sales=values[73],
         price_book=values[74],
         pe=values[75],
-        pe_realtime=values[76], # P1
+        pe_realtime=values[76],
         peg=values[77],
         price_eps_estimate_current_year=values[78],
         price_eps_estimate_next_year=values[79],
         short_ratio=values[80],
     )
 
-def get_required_p1_data(symbol):
-    ids = \
-        'XusJT53V34HT2jav1q2Yy5dU01Iz24C6oOdAguUyUyVyAD0TSrTeiKuVabAOttj7gv9n'
-    values = _request(symbol, ids).split(',')
-    return dict(
-        ask_realtime=values[0]
-        bid_realtime=values[1]
-        previous_close=values[2]
-        today_open=values[3]
-        change_realtime=values[4]
-        change_percent_realtime=values[5]
-        last_trade_price=values[6]
-        todays_value_change=values[7]
-        todays_value_change_realtime=values[8]
-        market_cap_realtime=values[9]
-        float_shares=values[10]
-        volume=values[11]
-        ask_size=values[12]
-        bid_size=values[13]
-        pe_realtime=values[14]
-        )
 
 def get_dividend_yield(symbol):
     return _request(symbol, 'y')
