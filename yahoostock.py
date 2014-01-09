@@ -127,21 +127,21 @@ def get_required_p1_data(symbol):
         'XusJT53V34HT2jav1q2Yy5dU01Iz24C6oOdAguUyUyVyAD0TSrTeiKuVabAOttj7gv9n'
     values = _request(symbol, ids).split(',')
     return dict(
-        ask_realtime=values[0]
-        bid_realtime=values[1]
-        previous_close=values[2]
-        today_open=values[3]
-        change_realtime=values[4]
-        change_percent_realtime=values[5]
-        last_trade_price=values[6]
-        todays_value_change=values[7]
-        todays_value_change_realtime=values[8]
-        market_cap_realtime=values[9]
-        float_shares=values[10]
-        volume=values[11]
-        ask_size=values[12]
-        bid_size=values[13]
-        pe_realtime=values[14]
+        ask_realtime=values[0],
+        bid_realtime=values[1],
+        previous_close=values[2],
+        today_open=values[3],
+        change_realtime=values[4],
+        change_percent_realtime=values[5],
+        last_trade_price=values[6],
+        todays_value_change=values[7],
+        todays_value_change_realtime=values[8],
+        market_cap_realtime=values[9],
+        float_shares=values[10],
+        volume=values[11],
+        ask_size=values[12],
+        bid_size=values[13],
+        pe_realtime=values[14],
         )
 
 def get_dividend_yield(symbol):
